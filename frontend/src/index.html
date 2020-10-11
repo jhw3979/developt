@@ -4,11 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Developt</title>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-  <h1>Developt</h1>
+  <header class="unlogged">
+    <h1 class="title">Developt</h1>
+    <input type="text" class="name-input" placeholder="(제목 없음)">
+    <button type="button" class="login-btn">
+      <img src="../src/img/google_logo.png" class="google-logo" alt="">
+      <span>로그인</span>
+    </button>
+    <button type="button" class="crud-btn">
+      <img src="../src/img/file.png" alt="">
+    </button>
+    <img src="../src/img/mypage.png" class="user-photo" alt="프로필 이미지">
+    <div class="layer" hidden>
+      <div class="crud-info">
+        <button type="button" data-func="new">새로 만들기</button>
+        <button type="button" data-func="get">불러오기</button>
+        <button type="button" data-func="post">저장하기</button>
+      </div>
+      <div class="user-info">
+        <span class="user-name"></span> 님
+        <br>
+        <span>환영합니다.</span>
+        <div class="user-email"></div>
+        <button type="button" class="logout-btn" data-func="logout">로그아웃</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="ppt-section container">
+      <ul class="slides"></ul>
+    </section>
+    <section class="markdown-section container">
+      <textarea class="markdown-textarea" placeholder="Input markdown..."></textarea>
+    </section>
+  </main>
 
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyA4OKNkwFyukg6XOyqYqMsR5aWyYd37EUU",
+      authDomain: "developt-2d008.firebaseapp.com",
+      databaseURL: "https://developt-2d008.firebaseio.com",
+      projectId: "developt-2d008",
+      storageBucket: "developt-2d008.appspot.com",
+      messagingSenderId: "678241428887",
+      appId: "1:678241428887:web:35455ebdc8e5feccd710d2",
+      measurementId: "G-7C3JMHQM8L"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
   <script type="module" src="js/index.js"></script>
 </body>
 </html>

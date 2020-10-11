@@ -1,0 +1,148 @@
+header {
+  position: relative;
+  height: 60px;
+  line-height: 60px;
+  background-color: #dedee7;
+  -webkit-user-select: none;
+}
+.title {
+  display: inline-block;
+  margin-left: 39px;
+  color: #603d7e;
+  font-size: 22px;
+  font-weight: bold;
+}
+.name-input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 80%;
+  padding: 0 10px;
+  border: 0;
+  background-color: transparent;
+  color: #4d4d4d;
+  font-size: 20px;
+  text-align: center;
+  outline: none;
+}
+.login-btn,
+.user-photo,
+.crud-btn {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  outline: none;
+}
+.login-btn {
+  width: 93px;
+  height: 39px;
+  line-height: 39px;
+  border-radius: 14px;
+  border: solid 1.5px #9393af;
+  background-color: #ffffff;
+  color: #603d7e;
+  font-size: 13px;
+  font-weight: bold;
+}
+.google-logo {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.crud-btn {
+  right: 100px;
+  border: 0;
+  background-color: transparent;
+}
+.user-photo {
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+}
+.layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 1000;
+}
+.layer[data-popup="crud"] .user-info {
+  display: none;
+}
+.layer[data-popup="user"] .crud-info {
+  display: none;
+}
+.user-info,
+.crud-info {
+  position: absolute;
+  top: 60px;
+  right: 22px;
+  width: 161px;
+  height: 169px;
+  line-height: 1;
+  background-color: white;
+  box-shadow: 0 3px 30px 0 rgba(93, 80, 106, 0.16);
+}
+.user-info {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.73;
+  padding: 20px;
+  color: #4d4d4d;
+  text-align: center;
+}
+.user-name {
+  display: inline-block;
+  max-width: 100px;
+  line-height: 1.1;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-y: hidden;
+  vertical-align: text-bottom
+}
+.user-email {
+  margin-bottom: 17px;
+  font-size: 11px;
+}
+.logout-btn {
+  width: 93px;
+  height: 39px;
+  border-radius: 14px;
+  border: solid 1.5px #9393af;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background-color: #dedee7;
+}
+.crud-info button {
+  width: 100%;
+  height: 33.3333%;
+  padding-left: 16px;
+  border: 0;
+  border-bottom: solid 1px #d8d8d8;
+  background-color: white;
+  color: #4d4d4d;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+.crud-info button:hover {
+  background-color: #dedee7;
+}
+
+.unlogged .user-photo,
+.unlogged .crud-btn {
+  display: none;
+}
+.logged .login-btn {
+  display: none;
+}
