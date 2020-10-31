@@ -23,6 +23,7 @@
     <img src="../src/img/mypage.png" class="user-photo" alt="프로필 이미지">
     <div class="layer" hidden>
       <div class="crud-info">
+        <button type="button" data-func="fullscreen">발표 시작</button>
         <button type="button" data-func="new">새로 만들기</button>
         <button type="button" data-func="get">불러오기</button>
         <button type="button" data-func="post">저장하기</button>
@@ -43,6 +44,7 @@
     <section class="markdown-section container">
       <textarea class="markdown-textarea" placeholder="Input markdown..."></textarea>
     </section>
+    <section class="fullscreen-section" hidden></section>
   </main>
 
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>

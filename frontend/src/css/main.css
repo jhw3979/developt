@@ -49,3 +49,9 @@ main {
   font-size: 40px;
   box-shadow: 0 3px 30px 0 rgba(93, 80, 106, 0.16);
 }
+.fullscreen-section {
+  background-color: white;
+}
+.fullscreen-section svg {
+  box-shadow: none;
+}

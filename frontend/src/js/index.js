@@ -1,6 +1,7 @@
 import parseMarkdown from './parser.js';
+import startFullscreen from './fullscreen.js';
 import {INIT_CONTENTS, USER_INFO, LOGGED, UNLOGGED, USER, CRUD, LOGOUT,
-  NEW, GET, POST, DELETE} from './consts.js';
+  FULLSCREEN, NEW, GET, POST, DELETE} from './consts.js';
 
 const headerEl = document.querySelector('header');
 const slidesEl = document.querySelector('.slides');
@@ -39,7 +40,6 @@ textareaEl.addEventListener('input', ({target: {value}}) => {
 loginBtnEl.addEventListener('click', () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then((result) => {
-    console.log(result.user);
     const {user: {email, photoURL, displayName}} = result;
     userPhotoEl.src = photoURL;
     userNameEl.textContent = displayName;
@@ -62,11 +62,13 @@ userInfoEl.addEventListener('click', evt => {
   }
 });
 
-// 팝업 닫기
-layerEl.addEventListener('click', () => {
+const closePopup = () => {
   layerEl.hidden = true;
   layerEl.dataset.popup = null;
-});
+};
+
+// 팝업 닫기
+layerEl.addEventListener('click', closePopup);
 
 // 사용자 정보 팝업 열기
 userPhotoEl.addEventListener('click', () => {
@@ -80,8 +82,13 @@ crudBtnEl.addEventListener('click', () => {
   layerEl.dataset.popup = CRUD;
 });
 
-// CRUD
+// 발표 시작, 새로 만들기, 불러오기, 저장하기
 crudInfoEl.addEventListener('click', evt => {
   evt.stopPropagation();
+  const {func} = evt.target.dataset;
+  if (func === FULLSCREEN) {
+    startFullscreen(slidesEl.children);
+    closePopup();
+  }
   // TODO: 새로 만들기, 불러오기, 저장하기
 });
